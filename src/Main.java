@@ -20,7 +20,9 @@ public class Main {
 //        System.out.println(rb.getValue());
 
         /// 2
-        // Petla while jest wymagana poniewaz systemy nie dzialaja idealnie i moga wystapic tzw "spurious wakeup"
+        // Petla while jest wymagana poniewaz watek ktory otrzyma notyfikacje nie ma gwarancji ze warunek jest ustawiony dobrze.
+        // Gdy watek sie budzi, nie moze zakladac ze stan w ktorym czekal byl nadal poprawny. Stan ten mogl zmienic sie pomiedzy wykonaniem notify() a zanim watek obudzil sie.
+        // Kolejnym powodem jest to ze  systemy nie dzialaja idealnie i moga wystapic tzw "spurious wakeup"
         // Spurious wakeup to losowe wybudzenie sie watku bez bycia zasygnalizowanym. Jest rzadkim ale mozliwym zdarzeniem ktore wystepuje w implementacji watkow Java
         // https://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#wait%28%29
 
