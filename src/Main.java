@@ -30,6 +30,12 @@ public class Main {
 
 //        CountingSemaphoreTest test = new CountingSemaphoreTest();
 //        test.starTest();
+
+
+
+        /// 4 + 5
+
+
         // variable declaration
 
         Philosopher[] philosophers = new Philosopher[5];
