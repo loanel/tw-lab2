@@ -6,14 +6,14 @@ public class CountingSemaphore {
     BinarySemaphore intSemaphore = new BinarySemaphore();
     BinarySemaphore waitSemaphore = new BinarySemaphore();
 
-    public CountingSemaphore(int permits){
+    public CountingSemaphore(int permits) {
         this.permits = permits;
         waitSemaphore.P();
     }
 
-    public void P(){
+    public void P() {
         intSemaphore.P();
-        if(permits == 0) {
+        if (permits == 0) {
             waitingCount++;
             intSemaphore.V();
             waitSemaphore.P();
@@ -23,9 +23,9 @@ public class CountingSemaphore {
         }
     }
 
-    public void V(){
+    public void V() {
         intSemaphore.P();
-        if(waitingCount > 0) {
+        if (waitingCount > 0) {
             waitingCount--;
             intSemaphore.V();
             waitSemaphore.V();
@@ -36,7 +36,7 @@ public class CountingSemaphore {
     }
 }
 
-class CountingSemaphoreTest{
+class CountingSemaphoreTest {
 
     public void starTest() {
 

@@ -1,4 +1,5 @@
 public class WaiterSolution {
+
     public void philosophersProblemSolution(int[] forks, WaiterPhilosopher[] waiterPhilosophers, BinarySemaphore[] binarySemaphores) {
         Waiter waiter = new Waiter(binarySemaphores);
         for (int i = 0; i < waiterPhilosophers.length; i++) {
@@ -11,4 +12,5 @@ public class WaiterSolution {
             t.start();
         }
     }
+
 }

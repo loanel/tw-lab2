@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 
-public class Philosopher implements Runnable{
+public class Philosopher implements Runnable {
 
     private int leftFork;
     private int rightFork;
     private BinarySemaphore[] semaphoreArray;
 
-    public Philosopher(int leftFork, int rightFork, BinarySemaphore[] semaphores){
+    public Philosopher(int leftFork, int rightFork, BinarySemaphore[] semaphores) {
         this.leftFork = leftFork;
         this.rightFork = rightFork;
         this.semaphoreArray = semaphores;
     }
 
     @Override
-    public void run(){
-        while(true){
+    public void run() {
+        while (true) {
             doSomething(System.nanoTime() + " thinking?");
             semaphoreArray[leftFork].P();
             doSomething(System.nanoTime() + ": Picked up left fork" + (leftFork + 1));
@@ -27,10 +27,10 @@ public class Philosopher implements Runnable{
         }
     }
 
-    public void doSomething(String action){
+    public void doSomething(String action) {
         System.out.println(Thread.currentThread().getName() + " " + action);
         try {
-            Thread.sleep((int) (Math.random()*100));
+            Thread.sleep((int) (Math.random() * 100));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

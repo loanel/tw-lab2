@@ -57,8 +57,5 @@ public class Main {
         wsol.philosophersProblemSolution(forks, waiterPhilosophers, binarySemaphores);
 
 
-
-
-
     }
 }

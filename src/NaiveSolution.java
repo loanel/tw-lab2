@@ -1,4 +1,4 @@
-public class NaiveSolution{
+public class NaiveSolution {
     public void philosophersProblemSolution(int[] forks, Philosopher[] philosophers, BinarySemaphore[] binarySemaphores) {
         for (int i = 0; i < philosophers.length; i++) {
             int leftFork = forks[i];

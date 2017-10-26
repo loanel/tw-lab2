@@ -10,20 +10,20 @@ public class BinarySemaphore {
         while (!value) {
             try {
                 wait();
-            } catch(InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         value = false;
     }
 
-    public synchronized void V(){
+    public synchronized void V() {
         value = true;
         notify();
     }
 
     /// for task 4
-    public boolean getValue(){
+    public boolean getValue() {
         return value;
     }
 
@@ -41,14 +41,14 @@ class BinarySemaphoreIf {
         if (!value) {
             try {
                 wait();
-            } catch(InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         value = false;
     }
 
-    public synchronized void V(){
+    public synchronized void V() {
         value = true;
         notify();
     }
